@@ -1,0 +1,26 @@
+- React je librabry u javascriptu koji nam sluzi da kreiramo UI sajta.
+Kreiranje viuelnog dela sajta (odnosno UI) vrsimo tako sto kreiramo komponente koje su reusable.
+
+- Komponente su logicke celine koje nam sluze da kreiraju jednu komponentu kao jednu celinu sa 
+svojim unutrasnjim operacijama koje kasnije mozemo vise puta i na vise mesta da koristimo.
+Svrha kreiranja takvih komponenti je prvenstveno da se nase kreiranje komponenti ne svodi na 
+prepisivanje logike iznovai iznova, vec da jednom komponentom mozemo da optimizujemo za vise upotreba.
+
+- U Reactu redosled najbitnijih fajlova je:
+-- index.html
+-- main.jsx
+-- App.jsx
+
+- Sve ostale komponente se mogu kreirati u components folderu kao posebni folderi sa svojim neophodnim fajlovima.
+
+- Pozivanje custom created componenti se vrsi tako sto u fajlu gde ih zelimo koristiti pozivamo
+import ImeKomponente from '..putanja/do/komponente'; i onda u kodu pozovemo ImeKomponente na mestu gde to nama
+odgovara.
+
+- JSX tip funkcija je tip koji u sebi ocekuje da se u returnu vraca html
+- .jsx extenzija u React fajlovima naznacava da se u tom fajlu negde u nekoj funkciji vraca rezultat kao html
+
+- Razlika obicnog htmla i Reacta se cesto ogleda u tome da:
+-- se u atributima prosledjuje promenljiva poput src={heroImg} gde je heroImg importovana putanja do fajlova
+-- class atribut je zamenjem sa className gde se takodje prosledjivanje moze vrsiti promenljivima
+-- unutar samog teksta html-a se cesto moze naci promenljiva
