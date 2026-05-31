@@ -24,3 +24,10 @@ odgovara.
 -- se u atributima prosledjuje promenljiva poput src={heroImg} gde je heroImg importovana putanja do fajlova
 -- class atribut je zamenjem sa className gde se takodje prosledjivanje moze vrsiti promenljivima
 -- unutar samog teksta html-a se cesto moze naci promenljiva
+
+- Props je skracenica od properties i sluzi da definise ulazne informacije u komponentu.
+Props moramo definisati kao argument funkcije komponente za koju zelimo da ih koristimo.
+Props je neophodno proslediti delu komponente gde zelimo da koristimo i isto tako proslediti neke 
+ulazne informacije onde gde se komponenta koristi. 
+Putem propsova omogucavamo iskoristivost komponente na mnogo vecem nivou zato sto nam jedna komponenta
+koristi za prikazivanje mnostva podataka.
