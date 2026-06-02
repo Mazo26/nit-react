@@ -28,20 +28,34 @@ function App() {
         console.log("Card heading 3");
       },
     },
+    {
+      src: "",
+      heading: "Card heading 4",
+      description: "Description 4",
+      onClickBtn: () => {
+        console.log("Card heading 4");
+      },
+    },
   ];
 
+  const onButtonClick = (data) => {
+    console.log(data);
+  };
   return (
     <>
       <Header />
       <div className='card-wrapper'>
-        {kartice.map((kartica) => (
-          <Card
-            imgSrc={kartica.src}
-            cardHeading={kartica.heading}
-            cardDesc={kartica.description}
-            btnClick={kartica.onClickBtn}
-          />
-        ))}
+        {kartice.map(
+          (kartica) =>
+            kartica.src !== "" && (
+              <Card
+                imgSrc={kartica.src}
+                cardHeading={kartica.heading}
+                cardDesc={kartica.description}
+                btnClick={(data) => onButtonClick(data)}
+              />
+            ),
+        )}
       </div>
     </>
   );
