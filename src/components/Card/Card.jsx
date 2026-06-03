@@ -1,7 +1,7 @@
 import "./Card.css";
 
 function Card(props) {
-  const { imgSrc, cardHeading, cardDesc, btnClick } = props;
+  const { imgSrc, cardHeading, cardDesc, btnClick, price } = props;
   console.log(imgSrc, cardDesc, cardHeading);
 
   //uobicajena sintaksa
@@ -25,8 +25,9 @@ function Card(props) {
       <img src={imgSrc} alt='Card image here' className='card-img' />
       <p className='card-heading'>{cardHeading}</p>
       <p className='card-description'>{cardDesc}</p>
+      <p>{price !== "" ? price : "nema cenu"}</p>
       <button className='card-button' onClick={() => btnClick(cardHeading)}>
-        See more
+        {price !== "" ? "Add to cart" : "Read more"}
       </button>
     </div>
   );

@@ -3,3 +3,13 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.input-text {
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  font-size: 30px;
+  margin-left: 20px;
+}
