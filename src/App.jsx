@@ -1,8 +1,11 @@
+import { useState } from "react";
 import "./App.css";
 import Card from "./components/Card/Card";
 import Header from "./components/Header/Header";
 
 function App() {
+  const [input, setInput] = useState(0);
+
   const kartice = [
     {
       src: "https://radovic-enterijer.com/wp-content/uploads/2025/03/Stolica_City-1-scaled.jpg",
@@ -42,13 +45,38 @@ function App() {
     },
   ];
 
+  const [cards, setCards] = useState(kartice);
+  const [heading, setHeading] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+
   const onButtonClick = (data) => {
     console.log(data);
   };
 
   const onChangeHandler = (event) => {
     const { value } = event.target;
-    console.log(value);
+    console.log(value, typeof value, "value");
+
+    setInput(value);
+  };
+
+  const setCardValueHandler = () => {
+    let newCard = {
+      src: "https://radovic-enterijer.com/wp-content/uploads/2025/03/Stolica_City-1-scaled.jpg",
+      onClickBtn: () => {
+        console.log("Card heading " + cards.length + 1);
+      },
+      heading: heading,
+      description: description,
+      price: price + "$",
+    };
+
+    setCards((prev) => [...prev, newCard]);
+
+    setHeading("");
+    setDescription("");
+    setPrice("");
   };
 
   /*
@@ -64,15 +92,36 @@ function App() {
       <Header />
 
       <div className='card-wrapper'>
+        <p>{input}</p>
         <input
           className='input-text'
           onFocus={() => console.log("Kliknuo korisnik na input")}
           onChange={onChangeHandler}
+          value={input}
         />
+        <input
+          className='input-text'
+          onFocus={() => console.log("Kliknuo korisnik na input")}
+          onChange={(e) => setHeading(e.target.value)}
+          value={heading}
+        />
+        <input
+          className='input-text'
+          onFocus={() => console.log("Kliknuo korisnik na input")}
+          onChange={(e) => setDescription(e.target.value)}
+          value={description}
+        />
+        <input
+          className='input-text'
+          onFocus={() => console.log("Kliknuo korisnik na input")}
+          onChange={(e) => setPrice(e.target.value)}
+          value={price}
+        />
+        <button onClick={setCardValueHandler}>Create card</button>
       </div>
 
       <div className='card-wrapper'>
-        {kartice.map(
+        {cards.map(
           (kartica) =>
             kartica.src !== "" && (
               <Card

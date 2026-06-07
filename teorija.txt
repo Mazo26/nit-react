@@ -31,3 +31,12 @@ Props je neophodno proslediti delu komponente gde zelimo da koristimo i isto tak
 ulazne informacije onde gde se komponenta koristi. 
 Putem propsova omogucavamo iskoristivost komponente na mnogo vecem nivou zato sto nam jedna komponenta
 koristi za prikazivanje mnostva podataka.
+
+- Stejt (State) u reactu oznacava stanje neke promenljive. State u Reactu moze biti lokalan i globalan.
+Lokalni state se deklarise unutar komponente i sluzi nam samo za pristupanje unutar komponente.
+Globalni state se deklarise u Storu (Store) aplikacije i koristi se globalno kroz celu aplikaciju.
+State se deklarise koriscenjem useState hooka i ima dve promenljive: jedna kao trenutni state i druga kao 
+funkcija koja menja state. npr. const [number, setNumber] = useState(0). "0" [] {}
+number je trenutni ili pocetni state koji je deklarisan unutar zagrada useState hooka, a setNumber je funkcija
+koja ga menja. U ovoj deklaraciji 0 je pocetni state. 
+State se brise kada se aplikacija ili prozor reloaduje, ne cuva se u memoriji kao localStorage. 
