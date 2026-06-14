@@ -49,6 +49,7 @@ function App() {
   const [heading, setHeading] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
+  const [counter, setCounter] = useState(0);
 
   const onButtonClick = (data) => {
     console.log(data);
@@ -78,6 +79,14 @@ function App() {
     setDescription("");
     setPrice("");
   };
+
+  function increment() {
+    setCounter(counter + 1);
+  }
+
+  function decrement() {
+    setCounter(counter - 1);
+  }
 
   /*
   Zadatak:
@@ -119,6 +128,16 @@ function App() {
         />
         <button onClick={setCardValueHandler}>Create card</button>
       </div>
+      <div className='card-wrapper'>
+        <p>{counter + " puta si klinuo"}</p>
+        <button onClick={increment}>Increment</button>
+        <button onClick={decrement}>Decrement</button>
+      </div>
+
+      {/*
+      Napraviti TO DO listu koja ce imati jedan input za text sa kojim ce da se unose zadaci za dan
+      pored svake stavke treba da ima dugme Delete koje ce da brise tu stavku iz liste 
+      */}
 
       <div className='card-wrapper'>
         {cards.map(
