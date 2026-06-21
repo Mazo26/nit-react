@@ -1,17 +1,15 @@
 import "./Header.css";
+import { NavLink } from "react-router";
 
 function Header() {
   return (
     <nav className='navigationBar'>
-      <a href='' className='navLinks'>
+      <NavLink className={"navLinks"} to='/'>
         Pocetna
-      </a>
-      <a href='' className='navLinks'>
-        O nama
-      </a>
-      <a href='' className='navLinks'>
-        Kontakt
-      </a>
+      </NavLink>
+      <NavLink className={"navLinks"} to='/todolista'>
+        To Do
+      </NavLink>
     </nav>
   );
 }
