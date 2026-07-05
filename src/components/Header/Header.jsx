@@ -10,6 +10,9 @@ function Header() {
       <NavLink className={"navLinks"} to='/todolista'>
         To Do
       </NavLink>
+      <NavLink className={"navLinks"} to='/shop'>
+        Shop
+      </NavLink>
     </nav>
   );
 }
