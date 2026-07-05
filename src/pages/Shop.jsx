@@ -18,7 +18,7 @@ const Shop = () => {
     <>
       <Header />
       {posts.map((post) => (
-        <div>
+        <div className='posts-holder'>
           <p class='title'>{post.title}</p>
           <p class='description'>{post.body}</p>
         </div>
